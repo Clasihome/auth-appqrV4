@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <app-volver-boton></app-volver-boton>
+
+    <app-menu-hamburguesa></app-menu-hamburguesa> <!-- Componente de menú reutilizable -->
+
+
+    <ion-title>{{ character?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="character">
+  <ion-card>
+    <ion-img [src]="character.image"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ character.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Estado: {{ character.status }}</p>
+      <p>Especie: {{ character.species }}</p>
+      <p>Genero: {{ character.gender }}</p>
+      <p>Origen: {{ character.origin?.name }}</p>
+      <p>Ubicación: {{ character.location?.name }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
